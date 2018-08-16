@@ -11,10 +11,15 @@ import UIKit
 class ToodooViewController: UITableViewController {
 
     var itemArray = ["Buy Wheat","Buy Mushroom","Buy eggs"]
-    
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //to check for the userDefaults and update the item array. i.e set item arrays value to that in defaults.
+        if let items = defaults.array(forKey: "ToDoListArray") as? [String]{
+            itemArray = items
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +47,9 @@ class ToodooViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(itemArray[indexPath.row])
+        //keep the row de selected so it looks good
         tableView.deselectRow(at: indexPath, animated: true)
+        //add checkmark and remove if already added.
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark{
            tableView.cellForRow(at: indexPath)?.accessoryType = .none
         }
@@ -58,11 +65,13 @@ class ToodooViewController: UITableViewController {
         let action = UIAlertAction(title: "Add new Item", style: .default) { (action) in
             //what will happen when user clicks the + button .
             self.itemArray.append(textField.text!)
+            self.defaults.set(self.itemArray, forKey: "ToDoListArray")
             self.tableView.reloadData()
             
         }
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create New Item"
+            
             textField = alertTextField
         }
         alert.addAction(action)
