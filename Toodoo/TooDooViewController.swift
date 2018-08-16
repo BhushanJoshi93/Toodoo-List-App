@@ -10,7 +10,7 @@ import UIKit
 
 class ToodooViewController: UITableViewController {
 
-    let itemArray = ["Buy Wheat","Buy Mushroom","Buy eggs"]
+    var itemArray = ["Buy Wheat","Buy Mushroom","Buy eggs"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,27 @@ class ToodooViewController: UITableViewController {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
     }
+    
+    //MARK - ADD NEW ITEMS
+    @IBAction func addButtonPressed(_ sender: Any) {
+        var textField = UITextField()
+        let alert =  UIAlertController(title: "Add New Todoo Item", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add new Item", style: .default) { (action) in
+            //what will happen when user clicks the + button .
+            self.itemArray.append(textField.text!)
+            self.tableView.reloadData()
+            
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create New Item"
+            textField = alertTextField
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     
 }
 
