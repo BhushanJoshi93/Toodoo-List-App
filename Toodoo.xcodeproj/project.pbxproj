@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97397B8D2128C0FD004FF905 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97397B8C2128C0FD004FF905 /* Item.swift */; };
 		97BCEDF920F6A349000C22B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCEDF820F6A349000C22B8 /* AppDelegate.swift */; };
 		97BCEDFB20F6A349000C22B8 /* TooDooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCEDFA20F6A349000C22B8 /* TooDooViewController.swift */; };
 		97BCEDFE20F6A349000C22B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97BCEDFC20F6A349000C22B8 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97397B8C2128C0FD004FF905 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		97BCEDF520F6A349000C22B8 /* Toodoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toodoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BCEDF820F6A349000C22B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97BCEDFA20F6A349000C22B8 /* TooDooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooDooViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97397B872128C0C1004FF905 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				97BCEDFA20F6A349000C22B8 /* TooDooViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		97397B882128C0CC004FF905 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97397B8C2128C0FD004FF905 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		97397B892128C0D0004FF905 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				97BCEDFC20F6A349000C22B8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		97397B8B2128C0E3004FF905 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				97BCEDFF20F6A349000C22B8 /* Assets.xcassets */,
+				97BCEE0120F6A349000C22B8 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		97BCEDEC20F6A349000C22B8 = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +89,11 @@
 		97BCEDF720F6A349000C22B8 /* Toodoo */ = {
 			isa = PBXGroup;
 			children = (
+				97397B8B2128C0E3004FF905 /* Supporting Files */,
+				97397B892128C0D0004FF905 /* View */,
+				97397B882128C0CC004FF905 /* Model */,
+				97397B872128C0C1004FF905 /* Controller */,
 				97BCEDF820F6A349000C22B8 /* AppDelegate.swift */,
-				97BCEDFA20F6A349000C22B8 /* TooDooViewController.swift */,
-				97BCEDFC20F6A349000C22B8 /* Main.storyboard */,
-				97BCEDFF20F6A349000C22B8 /* Assets.xcassets */,
-				97BCEE0120F6A349000C22B8 /* LaunchScreen.storyboard */,
 				97BCEE0420F6A349000C22B8 /* Info.plist */,
 			);
 			path = Toodoo;
@@ -136,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97BCEDFB20F6A349000C22B8 /* TooDooViewController.swift in Sources */,
+				97397B8D2128C0FD004FF905 /* Item.swift in Sources */,
 				97BCEDF920F6A349000C22B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
